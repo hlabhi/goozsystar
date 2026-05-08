@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .glass-panel {
+            background: rgba(16, 19, 27, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(65, 71, 85, 0.3);
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(75, 142, 255, 0.15);
+        }
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #adc6ff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #adc6ff;
+        }
+        .technical-border {
+            border: 1px solid rgba(139, 144, 160, 0.2);
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#633700",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "primary-fixed": "#d8e2ff",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffb595",
+                    "secondary-fixed-dim": "#ffb874",
+                    "tertiary-container": "#ef6719",
+                    "on-tertiary-fixed": "#351000",
+                    "background": "#10131b",
+                    "on-tertiary-container": "#4c1a00",
+                    "surface-container-high": "#272a32",
+                    "surface-container-lowest": "#0b0e16",
+                    "outline-variant": "#414755",
+                    "surface-container-highest": "#31353d",
+                    "surface": "#10131b",
+                    "surface-variant": "#31353d",
+                    "primary": "#adc6ff",
+                    "on-surface": "#e0e2ed",
+                    "primary-container": "#4b8eff",
+                    "inverse-on-surface": "#2d3039",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#10131b",
+                    "surface-container": "#1c2028",
+                    "on-primary-fixed": "#001a41",
+                    "secondary-fixed": "#ffdcbf",
+                    "on-tertiary": "#571e00",
+                    "on-surface-variant": "#c1c6d7",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "inverse-primary": "#005bc1",
+                    "on-primary-container": "#00285c",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e0e2ed",
+                    "surface-tint": "#adc6ff",
+                    "surface-bright": "#363942",
+                    "on-secondary-fixed": "#2d1600",
+                    "on-background": "#e0e2ed",
+                    "on-primary": "#002e69",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbcc",
+                    "surface-container-low": "#181c23",
+                    "secondary-container": "#fe9400",
+                    "secondary": "#ffbc7c",
+                    "on-secondary": "#4b2800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-display": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "technical-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">
+                RTV_REPAIR
+            </div>
+<div class="hidden md:flex gap-gutter items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Start</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-caps text-label-caps" href="#">Usługi</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Śledzenie</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">O nas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Kontakt</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 font-label-caps text-label-caps hover:bg-primary/90 transition-all active:scale-95 duration-100">
+                ZLEĆ_NAPRAWĘ
+            </button>
+</div>
+</nav>
+<main class="pt-24 pb-20 px-margin-mobile">
+<!-- Tracking Section -->
+<section class="mb-12">
+<div class="glass-panel p-6 glow-blue">
+<div class="flex justify-between items-center mb-4">
+<span class="font-technical-code text-technical-code text-primary">STATUS_SERWISU</span>
+<span class="font-technical-code text-technical-code text-on-surface-variant opacity-50">v.2.4.0</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile mb-6">Śledzenie zlecenia</h2>
+<div class="space-y-4">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-b border-outline text-on-surface p-4 font-technical-code text-technical-code focus:outline-none focus:border-primary transition-colors" placeholder="Numer zlecenia (np. RTV-8829)" type="text"/>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-caps text-label-caps py-4 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">search</span>
+                        SPRAWDŹ STATUS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Services Hero -->
+<header class="mb-8">
+<h1 class="font-headline-display text-[40px] leading-tight mb-2 uppercase">Nasze usługi</h1>
+<p class="text-on-surface-variant font-body-md">Przywracamy technologie do życia z najwyższą precyzją. Wykorzystujemy oryginalne komponenty i profesjonalne stacje lutownicze.</p>
+</header>
+<!-- Services Grid (Bento style on mobile) -->
+<div class="space-y-8">
+<!-- Category: Naprawa PC -->
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">desktop_windows</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile">Naprawa PC</h3>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="glass-panel p-5 relative overflow-hidden">
+<div class="absolute top-0 right-0 bg-primary/10 px-3 py-1 font-technical-code text-[10px] text-primary">ID_PC_01</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Budowa i modernizacja</h4>
+<p class="text-sm text-on-surface-variant">Konfiguracja i serwis płyt głównych</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<span class="font-technical-code text-primary">od 100 zł</span>
+<button class="technical-border px-4 py-2 text-sm font-label-caps text-label-caps hover:bg-primary hover:text-on-primary transition-all">WYBIERZ</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Laptopy -->
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">laptop_mac</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile">Laptopy</h3>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<div class="glass-panel p-5 relative overflow-hidden border-primary/40 glow-blue">
+<div class="absolute top-0 right-0 bg-secondary-container px-3 py-1 font-technical-code text-[10px] text-on-secondary-container">ID_LP_02</div>
+<div class="flex justify-between items-start mb-4">
+<div>
+<h4 class="font-bold text-lg">Wymiana matryc i klawiatur</h4>
+<p class="text-sm text-on-surface-variant">Ratowanie po zalaniu, konserwacja</p>
+</div>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center">
+<span class="pulse-dot"></span>
+<span class="font-technical-code text-primary">od 150 zł</span>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 text-sm font-label-caps text-label-caps">ZAREZERWUJ</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Category: Smartfony -->
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="material-symbols-outlined text-primary">smartphone</span>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile">Smartfony</h3>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-4 flex flex-col justify-between aspect-square">
+<div class="text-[10px] font-technical-code text-outline/40 mb-2">ID_PH_03</div>
+<h4 class="font-bold text-base mb-2">Wymiana ekranu / baterii</h4>
+<div>
+<span class="font-technical-code text-primary text-sm block mb-3">od 80 zł</span>
+<button class="w-full technical-border py-2 text-[10px] font-label-caps text-label-caps">WYBIERZ</button>
+</div>
+</div>
+<div class="glass-panel p-4 flex flex-col justify-between aspect-square">
+<div class="text-[10px] font-technical-code text-outline/40 mb-2">ID_DR_04</div>
+<h4 class="font-bold text-base mb-2">Odzysk danych</h4>
+<div>
+<span class="font-technical-code text-secondary text-sm block mb-3">od 350 zł</span>
+<button class="w-full technical-border py-2 text-[10px] font-label-caps text-label-caps">WYBIERZ</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tech Graphic -->
+<div class="mt-12 mb-4">
+<img alt="Profesjonalna naprawa elektroniki" class="w-full h-48 object-cover rounded-xl border border-outline-variant/30 shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsG2EqQl6s3zsvq34e9KgCj9nnEBEXjN3GhoPyg64PGyug-jERUc1L8bC9WE-DzS-MojZjPzqkvgYWPXAbT1o0mjgxR-cwipO7iZfBXgmZMROrOGhF5tB3WuVOLGFnvOtS8_4rNoABfIfwD5dMy508xsk0Er8hMnQVq8_wY-8ysCKLTm08ExQ4oWk5Y1mlAUHvzqGAPuuE0-eh3gFX6yLkVBys2w2HmYfPmJYlJ3wPJBzMjVO-MGDbj-8brKn9kRSSLwmklUY7_37l"/>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 py-16">
+<div class="w-full px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="font-label-caps text-primary text-lg mb-6 uppercase">RTV SYSTEMS</div>
+<p class="font-technical-code text-technical-code text-on-surface-variant">© 2024 RTV SYSTEMS. WSZYSTKIE_SYSTEMY_SPRAWNE</p>
+</div>
+<div class="flex flex-col gap-4 mb-8 md:mb-0">
+<span class="text-on-surface-variant font-body-md">Osiedle Oświecenia 44, 31-636 Kraków</span>
+<span class="text-on-surface-variant font-body-md">Telefon: 12 647 09 30</span>
+<span class="text-on-surface-variant font-body-md">Godziny: Pon-Pt 09:00-18:00</span>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Regulamin serwisu</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Polityka prywatności</a>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation Shell -->
+<div class="md:hidden fixed bottom-0 left-0 w-full glass-panel border-t-0 flex justify-around items-center py-4 z-50 px-4">
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-label-caps uppercase">Start</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">build</span>
+<span class="text-[10px] font-label-caps uppercase">Usługi</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">query_stats</span>
+<span class="text-[10px] font-label-caps uppercase">Status</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-caps uppercase">Profil</span>
+</div>
+</div>
+</body></html>

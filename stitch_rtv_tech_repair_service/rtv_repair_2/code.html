@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#4c1a00",
+                    "tertiary-container": "#ef6719",
+                    "on-tertiary-fixed": "#351000",
+                    "background": "#10131b",
+                    "secondary-fixed-dim": "#ffb874",
+                    "tertiary": "#ffb595",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "on-primary-fixed-variant": "#004493",
+                    "primary-fixed": "#d8e2ff",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "on-secondary-container": "#633700",
+                    "surface-variant": "#31353d",
+                    "surface": "#10131b",
+                    "surface-container-highest": "#31353d",
+                    "outline-variant": "#414755",
+                    "surface-container-lowest": "#0b0e16",
+                    "surface-container-high": "#272a32",
+                    "on-secondary-fixed": "#2d1600",
+                    "surface-bright": "#363942",
+                    "surface-tint": "#adc6ff",
+                    "inverse-surface": "#e0e2ed",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-error": "#690005",
+                    "on-primary-container": "#00285c",
+                    "inverse-primary": "#005bc1",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "on-surface-variant": "#c1c6d7",
+                    "on-tertiary": "#571e00",
+                    "secondary-fixed": "#ffdcbf",
+                    "surface-container": "#1c2028",
+                    "on-primary-fixed": "#001a41",
+                    "surface-dim": "#10131b",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#2d3039",
+                    "primary-container": "#4b8eff",
+                    "on-surface": "#e0e2ed",
+                    "primary": "#adc6ff",
+                    "on-secondary": "#4b2800",
+                    "secondary": "#ffbc7c",
+                    "secondary-container": "#fe9400",
+                    "surface-container-low": "#181c23",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-primary": "#002e69",
+                    "error-container": "#93000a",
+                    "on-background": "#e0e2ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "technical-code": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-display": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(28, 32, 40, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 144, 160, 0.2);
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 20px rgba(75, 142, 255, 0.15);
+            border-color: rgba(173, 198, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">RTV_REPAIR</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Services</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Tracking</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-caps text-label-caps" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Contacts</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label-caps text-label-caps hover:bg-primary/90 transition-all active:scale-95 duration-100">
+                START_REPAIR
+            </button>
+</nav>
+</header>
+<main class="pt-32 pb-16">
+<!-- Hero Section: Mission & Identity -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-technical-code text-technical-code text-primary">SYSTEM_STATUS: OPERATIONAL</span>
+</div>
+<h1 class="font-headline-display text-headline-display text-on-surface">Искусство восстановления сложной электроники</h1>
+<p class="text-on-surface-variant text-body-md max-w-xl">
+                        Мы — RTV SYSTEMS, команда инженеров-перфекционистов. Наша миссия — возвращать к жизни устройства, которые другие считают неремонтопригодными, используя прецизионное оборудование и десятилетия накопленного опыта.
+                    </p>
+<div class="flex gap-4">
+<div class="glass-panel p-4 flex-1">
+<span class="font-headline-lg text-headline-lg text-primary block">25+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">ЛЕТ ОПЫТА</span>
+</div>
+<div class="glass-panel p-4 flex-1">
+<span class="font-headline-lg text-headline-lg text-primary block">15k+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">УСТРОЙСТВ</span>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] overflow-hidden rounded-xl glass-panel">
+<img alt="Precision Repair" class="w-full h-full object-cover opacity-80" data-alt="A close-up photograph of a professional technician's hand using high-precision tweezers to handle a tiny microchip on a complex green circuit board. The lighting is cinematic, with electric blue and cool white glows illuminating the metallic traces of the motherboard. The background is a dark, high-tech laboratory environment with a shallow depth of field, emphasizing the technical craftsmanship and clean-room aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCquKBTBpSOq2WgWrcH1rxpwlL-Ny2Deyf3tP1EBgIZSgXr1NKkQJVIqshliW18AwIXAI30b8AS-S8uglETCPEyID22pru2YJqlyOHJABjjY9pWfXDBCTNoKqf5BFXcsOa3uMwDv0Qzef_Sa7jyOHCi0UVwqsIkAga8sGVs7KSUanbrgfoI0WTL7JbhatznSHsHaipzin0F-evR0PoDRhpR8k-S70iv79LxUhzvLHmUJA5XP7rQFEUOTxUI3CRe0EcQiCnQUUg2wQJw"/>
+<div class="absolute top-4 right-4 font-technical-code text-technical-code bg-background/80 px-3 py-1 border border-outline-variant/30">MODULE_CALIBRATION_01</div>
+</div>
+</div>
+</section>
+<!-- Our Experience: Bento Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-32">
+<h2 class="font-headline-lg text-headline-lg mb-12 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+                Наш опыт и экспертиза
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-panel p-8 glow-border transition-all">
+<div class="flex justify-between items-start mb-12">
+<span class="font-technical-code text-technical-code text-primary">TECH_STACK_01</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="memory">memory</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Компонентный ремонт</h3>
+<p class="text-on-surface-variant mb-6">Мы не просто меняем модули. Мы восстанавливаем платы на компонентном уровне: BGA-пайка, замена контроллеров питания, восстановление дорожек после коррозии.</p>
+<div class="h-48 w-full bg-surface-container rounded-lg overflow-hidden">
+<img alt="BGA Station" class="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-500" data-alt="A high-angle professional photograph of a high-tech BGA rework station in operation. The infrared heating element glows with a deep orange hue against the dark charcoal metallic surface of the motherboard. Fine plumes of soldering smoke are captured in sharp detail under professional studio lighting. The aesthetic is industrial and hyper-accurate, reflecting a premium electronic repair environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBZWQ_nHB3Hu-9P3ymO16QNThz2MD9efiqtR41AsxcWDkg6PnEpwcrSV1FfDSKg2R1Ke3L3z253-oYPhZXHLRPg9tGwLmGG7xvRheBkEIRU1BvGJZYo5KxbW5ImLQueybvQtvuO41UgmWGgUhke6pjPwh5Ys8KVPuM1gOcqpCFFXNuVc3yXhFWFutzcd2yoF9AezA5cowoYcbiN6z2f1EZRg7fDbTIWb6VLBgpKhXbXOco4LLRKvDOLezMMDSVKcMyjPD5oPMHnmY0"/>
+</div>
+</div>
+<div class="glass-panel p-8 flex flex-col justify-between glow-border transition-all">
+<span class="font-technical-code text-technical-code text-secondary mb-4">DIAGNOSTICS_PROCEDURE</span>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Точная диагностика</h3>
+<p class="text-on-surface-variant">Использование осциллографов и тепловизоров позволяет нам находить неисправность с точностью до 0.1 мм.</p>
+<div class="mt-8 flex justify-end">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="biotech">biotech</span>
+</div>
+</div>
+<div class="glass-panel p-8 glow-border transition-all">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="shield">shield</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Гарантия качества</h3>
+<p class="text-on-surface-variant">Каждое устройство проходит 12-часовой стресс-тест перед выдачей клиенту. Мы уверены в своей работе.</p>
+</div>
+<div class="md:col-span-2 glass-panel p-8 flex items-center gap-8 glow-border transition-all">
+<div class="flex-1">
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Инструментарий</h3>
+<p class="text-on-surface-variant">Мы инвестируем в лучшее оборудование от JBC, Fluke и Rigol, чтобы гарантировать заводское качество пайки.</p>
+</div>
+<div class="w-1/3 hidden md:block">
+<img alt="Tools" class="rounded-lg shadow-xl" data-alt="A meticulously organized array of high-end electronics repair tools, including a digital soldering iron with a blue glowing screen, precision multimeters, and various steel probes. The tools are arranged on a dark, anti-static work mat. The lighting is soft and focused, creating subtle highlights on the metallic surfaces and communicating a professional, clean, and high-tech craftsmanship atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgWs7Tf8_xCpiDsBgWmSdylGjHU84RWKX-ktIWeAqe99xd0BGSzlJtCo3fK5vib_V1pBD77HmVc3pmyJZxHiKRQN3fhPijfiZYFKXSUAnVJhk7Bv0uaKKDe9ZYTQL0ji38qcdWMRhwqjCU03627HipII1nYVHoSDrSYJ4dVKzEZnelOQtPKd6aHJ0mtndlR_coG0IL9X_0wxxRF734S_hIrtmSGbQ_4T1dy7hcF3bgKfIGoU_f2VtkiiFRLQtFVhH-MPSncxDaTeDC"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Team Section -->
+<section class="bg-surface-container-low py-24">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<span class="font-label-caps text-label-caps text-primary block mb-2">ENGINEERING_DEPT</span>
+<h2 class="font-headline-lg text-headline-lg">Команда мастеров</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter">
+<!-- Master Card -->
+<div class="group">
+<div class="relative overflow-hidden mb-4 rounded-lg bg-surface-container-high aspect-[3/4]">
+<img alt="Lead Engineer" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional portrait of a male electronics engineer with a focused expression, wearing a dark navy technician's uniform. He is in a high-tech workshop setting with blurred electronics equipment in the background. The lighting is dramatic and cool-toned, casting professional shadows. The style is modern and high-contrast, fitting a premium technical service brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdHltGl6y5QXSQFPgVc4JIzJ8wQjOaFmZ0w9ep70PffYxl8lCVMozGI7moSooe9hYWLdJVK0dVOBj3isbfU0pjHiT0K2FULij6qQPJOETmvpiXVswT0t0tTC_rdBgy2kcJUIawBuSod_8f99Ftt3TnP1ji98XeLZybLgZgGzjj3kvPjr4TjMbT-4IVEn6fje5J88GXNprm0BXo1Yq8jxieo_sfswPdDU8PqhTPNI_52KPn0uOK17GyJ-CcaswvdokjNbwsvTNbktA4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<h4 class="font-label-caps text-label-caps text-on-surface">АЛЕКСЕЙ ПЕТРОВ</h4>
+<p class="font-technical-code text-technical-code text-primary">CHIEF_ENGINEER</p>
+</div>
+<div class="group">
+<div class="relative overflow-hidden mb-4 rounded-lg bg-surface-container-high aspect-[3/4]">
+<img alt="Senior Master" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a senior technical expert in a clean, professional lab coat. He is standing in front of a shelf filled with high-precision measuring instruments. The atmosphere is professional and trustworthy, with high-key lighting that emphasizes clarity and expertise. The color palette is dominated by deep blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUdU9DUSd0Zw1y8PW9jyJAi4isOSnJPu3Up3cLdDsjhFk6VZ4NPlTCgdzJgcwDiBQX5IRc1XSZ1uIdqv63aat_mgC2qfr0wFtj2WQuJ97uW3wBmxZcWfXixc74UOGzX0Gsqu2WDCZNHuNe3dsRMI8vc0lDxkvKBZoMMXrqeGmY5rE3g0wvFiGl_9G2FbmeDUqwWJN8t2-7O0cHJSKR2b16Pu99-swne_fe5256In1qW7yUjQqsLEW1UOariNkYZCSN_UjuZwTh4oxi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<h4 class="font-label-caps text-label-caps text-on-surface">ДМИТРИЙ СОКОЛОВ</h4>
+<p class="font-technical-code text-technical-code text-primary">BGA_SPECIALIST</p>
+</div>
+<div class="group">
+<div class="relative overflow-hidden mb-4 rounded-lg bg-surface-container-high aspect-[3/4]">
+<img alt="Diagnostic Specialist" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A close-up portrait of a young, skilled technician wearing protective anti-static eyewear. He is illuminated by the soft blue glow of a digital monitor. The shot is modern and tech-focused, highlighting his concentration and professional precision. The visual style is crisp with a dark, sophisticated background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdmUMox9nvvbm69vbKxWjAbu_9NlU4UrNOotCm3xkVuPyeY374MBYQ__Caar8p59bkaakMEfoGhMvFTWRW6Tu7AiAfjMi6jVlc0sf-Q1ECO59QDRRXK1cVwCLesdQRkcuVs-taBZ6MG8i-2Yv1iQs9SYTeCqdWn11jhj2XSGohkW_R9_SDfk3akuFjwXW_yPobgw3w01ufzqtQnIX10tWFzaIftKqNrRCKsQB2U7acBXQdjarHncyuUbFNxQieNTUXtkQZOgj0JncH"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<h4 class="font-label-caps text-label-caps text-on-surface">ИВАН ВОЛКОВ</h4>
+<p class="font-technical-code text-technical-code text-primary">DIAGNOSTIC_LEAD</p>
+</div>
+<div class="group">
+<div class="relative overflow-hidden mb-4 rounded-lg bg-surface-container-high aspect-[3/4]">
+<img alt="Quality Assurance" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="Portrait of a quality assurance specialist in a professional electronics laboratory. He is holding a digital multimeter, looking confidently at the camera. The background shows a blurry but organized technical workbench. The lighting is bright and even, communicating transparency and reliability in the quality control process." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8Q0sO8M-tb1syuW0t1EuHwcyvs8WhhG_4RZCzSmuAuWsgonvSvanGuuX44TtNYVFdIIQVmGiTBRVPcH0vR1AuZCPx7IC_RhPao1OybyF9O8qOSbJTRgZalULQd_-j1CZxc6PdSdgEbKW2mmN8GctYoPH0t_3v6-aCEO9FaGiJnfM_ih7zSPgW-8hzefbJ5JWtOHuLFoamGdG3r53wcsO7ANboYI0ULvnNPu8Db8sL4ade1g83C24Fs88DiFbi-B1i3TIwR5Ni7UZN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-60"></div>
+</div>
+<h4 class="font-label-caps text-label-caps text-on-surface">АНДРЕЙ МОРОЗОВ</h4>
+<p class="font-technical-code text-technical-code text-primary">QA_MANAGER</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Quality Guarantee -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-24">
+<div class="glass-panel p-12 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-display text-headline-display mb-6">Гарантия безупречности</h2>
+<p class="text-on-surface-variant text-body-md mb-8">
+                        Мы не ищем временных решений. Каждый ремонт — это восстановление до заводских спецификаций. Мы используем только оригинальные запчасти или сертифицированные аналоги высшего класса.
+                    </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="font-label-caps text-label-caps">12 МЕСЯЦЕВ ГАРАНТИИ НА ВСЕ РАБОТЫ</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+<span class="font-label-caps text-label-caps">БЕСПЛАТНАЯ ДИАГНОСТИКА ПРИ РЕМОНТЕ</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="biotech">biotech</span>
+<span class="font-label-caps text-label-caps">КОНТРОЛЬ КАЧЕСТВА ПО СТАНДАРТУ ISO</span>
+</li>
+</ul>
+</div>
+<!-- Background decoration -->
+<div class="absolute -right-20 -bottom-20 opacity-10">
+<span class="material-symbols-outlined text-[300px]" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="w-full px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+<div>
+<div class="font-label-caps text-primary text-lg mb-6">RTV_REPAIR</div>
+<p class="text-on-surface-variant font-body-md max-w-xs">
+                    Профессиональный сервисный центр по ремонту электроники. Мы делаем то, что другие считают невозможным.
+                </p>
+</div>
+<div class="space-y-2">
+<p class="text-on-surface-variant font-body-md">Osiedle Oświecenia 44, 31-636 Kraków</p>
+<p class="text-on-surface-variant font-body-md">Phone: 126470930</p>
+<p class="text-on-surface-variant font-body-md">Hours: Mon-Fri 09:00-18:00</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Privacy Policy</a>
+<div class="pt-8">
+<p class="font-technical-code text-technical-code text-on-surface-variant opacity-50">© 2024 RTV SYSTEMS. ALL_SYSTEMS_OPERATIONAL</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

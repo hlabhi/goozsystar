@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#4c1a00",
+                    "tertiary-container": "#ef6719",
+                    "on-tertiary-fixed": "#351000",
+                    "background": "#10131b",
+                    "secondary-fixed-dim": "#ffb874",
+                    "tertiary": "#ffb595",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "on-primary-fixed-variant": "#004493",
+                    "primary-fixed": "#d8e2ff",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "on-secondary-container": "#633700",
+                    "surface-variant": "#31353d",
+                    "surface": "#10131b",
+                    "surface-container-highest": "#31353d",
+                    "outline-variant": "#414755",
+                    "surface-container-lowest": "#0b0e16",
+                    "surface-container-high": "#272a32",
+                    "on-secondary-fixed": "#2d1600",
+                    "surface-bright": "#363942",
+                    "surface-tint": "#adc6ff",
+                    "inverse-surface": "#e0e2ed",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-error": "#690005",
+                    "on-primary-container": "#00285c",
+                    "inverse-primary": "#005bc1",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "on-surface-variant": "#c1c6d7",
+                    "on-tertiary": "#571e00",
+                    "secondary-fixed": "#ffdcbf",
+                    "surface-container": "#1c2028",
+                    "on-primary-fixed": "#001a41",
+                    "surface-dim": "#10131b",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#2d3039",
+                    "primary-container": "#4b8eff",
+                    "on-surface": "#e0e2ed",
+                    "primary": "#adc6ff",
+                    "on-secondary": "#4b2800",
+                    "secondary": "#ffbc7c",
+                    "secondary-container": "#fe9400",
+                    "surface-container-low": "#181c23",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-primary": "#002e69",
+                    "error-container": "#93000a",
+                    "on-background": "#e0e2ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "technical-code": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-display": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        line-height: 1;
+      }
+      .glass-card {
+        background: rgba(28, 32, 40, 0.7);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(139, 144, 160, 0.2);
+      }
+      .glow-border:hover {
+        border-color: #4b8eff;
+        box-shadow: 0 0 15px rgba(75, 142, 255, 0.15);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<div class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg font-extrabold tracking-tighter text-primary">RTV_REPAIR</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Start</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-caps text-label-caps" href="#">Usługi</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Śledzenie</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">O nas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Kontakt</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center bg-surface-container px-4 py-2 rounded-full border border-outline-variant/30">
+<span class="material-symbols-outlined text-outline mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-technical-code font-technical-code p-0 w-32 placeholder:text-outline/50" placeholder="SZUKAJ USŁUG" type="text"/>
+</div>
+<button class="bg-primary text-on-primary-container px-6 py-2 font-label-caps text-label-caps font-bold rounded-lg hover:shadow-[0_0_15px_rgba(173,198,255,0.4)] transition-all active:scale-95 duration-100 uppercase">
+                    Zleć naprawę
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<!-- Hero Section -->
+<section class="mb-20 text-center md:text-left grid md:grid-cols-2 gap-gutter items-center">
+<div>
+<span class="font-technical-code text-technical-code text-primary-container mb-4 block tracking-widest uppercase">Protokół_Diagnostyczny_v4</span>
+<h1 class="font-headline-display text-headline-display text-on-surface mb-6 uppercase">Profesjonalny serwis elektroniki</h1>
+<p class="text-on-surface-variant max-w-xl mb-8 font-body-md text-body-md">
+                    Przywracamy technologie do życia z najwyższą precyzją. Wykorzystujemy oryginalne komponenty, profesjonalne stacje lutownicze i gwarantujemy pełne bezpieczeństwo Twoich danych.
+                </p>
+<div class="flex flex-wrap gap-4 justify-center md:justify-start">
+<div class="glass-card px-4 py-3 rounded-xl flex items-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-technical-code text-technical-code">STATUS_SYSTEMU: AKTYWNY</span>
+</div>
+<div class="glass-card px-4 py-3 rounded-xl flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="verified">verified</span>
+<span class="font-technical-code text-technical-code">INŻYNIERZY: CERTYFIKOWANI</span>
+</div>
+</div>
+</div>
+<div class="relative h-[400px] rounded-2xl overflow-hidden border border-outline-variant/20 shadow-2xl">
+<img alt="Realistyczna naprawa elektroniki" class="w-full h-full object-cover" data-alt="A high-quality, realistic close-up shot of a professional technician's hands repairing a complex circuit board with a fine-tip soldering iron. Bright, focused white workbench lighting contrasts with the technical tools and macro details of the electronic components, resistors, and microchips. Small wisps of solder smoke are visible, conveying an authentic professional atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsG2EqQl6s3zsvq34e9KgCj9nnEBEXjN3GhoPyg64PGyug-jERUc1L8bC9WE-DzS-MojZjPzqkvgYWPXAbT1o0mjgxR-cwipO7iZfBXgmZMROrOGhF5tB3WuVOLGFnvOtS8_4rNoABfIfwD5dMy508xsk0Er8hMnQVq8_wY-8ysCKLTm08ExQ4oWk5Y1mlAUHvzqGAPuuE0-eh3gFX6yLkVBys2w2HmYfPmJYlJ3wPJBzMjVO-MGDbj-8brKn9kRSSLwmklUY7_37l"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
+</div>
+</section>
+<!-- Services Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-20">
+<!-- PC Repair -->
+<div class="glass-card p-8 rounded-xl glow-border transition-all flex flex-col h-full group">
+<div class="mb-6 flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="desktop_windows">desktop_windows</span>
+<span class="font-technical-code text-technical-code text-outline/40">ID_PC_01</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Naprawa PC</h3>
+<ul class="space-y-3 mb-8 flex-grow">
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Budowa i modernizacja
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Serwis płyt głównych
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Konserwacja układów
+                    </li>
+</ul>
+<div class="mt-auto">
+<div class="text-primary font-headline-lg mb-4">od 100 zł</div>
+<button class="w-full border border-primary text-primary py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary/10 transition-all uppercase">Wybierz</button>
+</div>
+</div>
+<!-- Laptop Repair -->
+<div class="glass-card p-8 rounded-xl glow-border transition-all flex flex-col h-full group border-primary/40 bg-surface-container-low/80">
+<div class="mb-6 flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="laptop_mac">laptop_mac</span>
+<span class="font-technical-code text-technical-code text-outline/40">ID_LP_02</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Laptopy</h3>
+<ul class="space-y-3 mb-8 flex-grow">
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Wymiana matryc
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Ratowanie po zalaniu
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Naprawa klawiatur
+                    </li>
+</ul>
+<div class="mt-auto">
+<div class="text-primary font-headline-lg mb-4">od 150 zł</div>
+<button class="w-full bg-primary text-on-primary-container py-3 rounded-lg font-label-caps text-label-caps hover:shadow-[0_0_15px_rgba(173,198,255,0.3)] transition-all uppercase">Zarezerwuj</button>
+</div>
+</div>
+<!-- Phone Repair -->
+<div class="glass-card p-8 rounded-xl glow-border transition-all flex flex-col h-full group">
+<div class="mb-6 flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-primary" data-icon="smartphone">smartphone</span>
+<span class="font-technical-code text-technical-code text-outline/40">ID_PH_03</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Smartfony</h3>
+<ul class="space-y-3 mb-8 flex-grow">
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Wymiana wyświetlaczy
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Wymiana baterii
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Naprawa oprogramowania
+                    </li>
+</ul>
+<div class="mt-auto">
+<div class="text-primary font-headline-lg mb-4">od 80 zł</div>
+<button class="w-full border border-primary text-primary py-3 rounded-lg font-label-caps text-label-caps hover:bg-primary/10 transition-all uppercase">Wybierz</button>
+</div>
+</div>
+<!-- Data Recovery -->
+<div class="glass-card p-8 rounded-xl glow-border transition-all flex flex-col h-full group">
+<div class="mb-6 flex justify-between items-start">
+<span class="material-symbols-outlined text-4xl text-secondary" data-icon="database">database</span>
+<span class="font-technical-code text-technical-code text-outline/40">ID_DR_04</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg mb-4">Odzyskiwanie</h3>
+<ul class="space-y-3 mb-8 flex-grow">
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Odzysk z HDD/SSD
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Naprawa macierzy RAID
+                    </li>
+<li class="flex items-center gap-2 text-on-surface-variant font-technical-code text-sm">
+<span class="text-primary">/</span> Laboratorium ISO5
+                    </li>
+</ul>
+<div class="mt-auto">
+<div class="text-secondary font-headline-lg mb-4">od 350 zł</div>
+<button class="w-full border border-secondary text-secondary py-3 rounded-lg font-label-caps text-label-caps hover:bg-secondary/10 transition-all uppercase">Wybierz</button>
+</div>
+</div>
+</div>
+<!-- Detailed Pricing Table -->
+<div class="mb-20">
+<h2 class="font-headline-lg text-headline-lg mb-8 text-center uppercase tracking-widest">Szczegółowy Cennik Usług</h2>
+<div class="glass-card overflow-hidden rounded-xl border border-outline-variant/30">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-high">
+<tr>
+<th class="px-6 py-4 font-label-caps text-label-caps text-outline uppercase">Kategoria / Usługa</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-outline uppercase">Złożoność</th>
+<th class="px-6 py-4 font-label-caps text-label-caps text-outline uppercase text-right">Koszt</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/20">
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface">Diagnostyka sprzętu (wszystkie typy)</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded font-technical-code text-xs uppercase">Podstawowa</span>
+</td>
+<td class="px-6 py-4 text-right font-technical-code text-primary">0 zł*</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface">Lutowanie BGA (GPU / CPU)</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-tertiary-container/20 text-tertiary-container rounded font-technical-code text-xs uppercase">Zaawansowana</span>
+</td>
+<td class="px-6 py-4 text-right font-technical-code text-primary">od 300 zł</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface">Wymiana gniazda zasilania (Micro-USB/Type-C)</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded font-technical-code text-xs uppercase">Standard</span>
+</td>
+<td class="px-6 py-4 text-right font-technical-code text-primary">120 zł</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface">Czyszczenie ultradźwiękowe płyty głównej</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded font-technical-code text-xs uppercase">Specjalistyczna</span>
+</td>
+<td class="px-6 py-4 text-right font-technical-code text-primary">180 zł</td>
+</tr>
+<tr class="hover:bg-primary/5 transition-colors">
+<td class="px-6 py-4 font-body-md text-on-surface">Przywracanie systemu i sterowników</td>
+<td class="px-6 py-4">
+<span class="px-2 py-1 bg-primary/10 text-primary rounded font-technical-code text-xs uppercase">Podstawowa</span>
+</td>
+<td class="px-6 py-4 text-right font-technical-code text-primary">100 zł</td>
+</tr>
+</tbody>
+</table>
+<div class="p-6 bg-surface-container-lowest/50">
+<p class="font-technical-code text-xs text-outline italic">* Przy warunku wykonania naprawy w naszym serwisie. Sama diagnostyka — 50 zł.</p>
+</div>
+</div>
+</div>
+<!-- Bento Features -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-card p-8 rounded-xl relative overflow-hidden group">
+<div class="relative z-10">
+<h4 class="font-headline-lg text-headline-lg mb-4 uppercase">Śledzenie naprawy online</h4>
+<p class="text-on-surface-variant max-w-md mb-6 font-body-md">
+                        Wprowadź numer seryjny urządzenia i monitoruj każdy etap serwisu: od przyjęcia po finalne testy jakości.
+                    </p>
+<div class="flex gap-2">
+<input class="bg-surface-container-high border-outline-variant/30 rounded-lg px-4 py-2 font-technical-code text-primary focus:border-primary focus:ring-1 focus:ring-primary w-full md:w-64" placeholder="NR_ŚLEDZENIA" type="text"/>
+<button class="bg-primary text-on-primary-container px-6 py-2 rounded-lg font-label-caps text-label-caps uppercase">Szukaj</button>
+</div>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-[200px]" data-icon="query_stats">query_stats</span>
+</div>
+</div>
+<div class="glass-card p-8 rounded-xl flex flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-5xl text-secondary mb-4" data-icon="verified_user">verified_user</span>
+<h4 class="font-headline-lg text-headline-lg mb-2">Gwarancja</h4>
+<p class="text-on-surface-variant font-body-md">Udzielamy do 12 miesięcy gwarancji na wszystkie wykonane prace oraz użyte części.</p>
+<div class="mt-6 font-technical-code text-primary-container border-t border-outline-variant/20 pt-4 w-full uppercase">
+                    CERTYFIKAT_ID: #40922
+                </div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 mt-20">
+<div class="w-full px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-label-caps text-primary text-lg font-bold uppercase">RTV SYSTEMS</div>
+<p class="text-on-surface-variant font-body-md">Precyzyjny serwis elektroniki cyfrowej. Laboratoryjne warunki pracy i wyłącznie oryginalne części zamienne.</p>
+<div class="flex gap-4">
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="share">share</span></a>
+<a class="text-outline hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined" data-icon="mail">mail</span></a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-outline text-xs tracking-widest uppercase">Kontakt i Lokalizacja</span>
+<p class="text-on-surface-variant font-body-md">Osiedle Oświecenia 44, 31-636 Kraków</p>
+<p class="text-on-surface-variant font-body-md">Telefon: 12 647 09 30</p>
+<p class="text-on-surface-variant font-body-md">Godziny: Pon-Pt 09:00-18:00</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-outline text-xs tracking-widest uppercase">Informacje Prawne</span>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Regulamin serwisu</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Polityka prywatności</a>
+<div class="mt-8 pt-8 border-t border-outline-variant/10">
+<p class="font-technical-code text-technical-code text-primary uppercase">© 2024 RTV SYSTEMS. WSZYSTKIE_SYSTEMY_SPRAWNE</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

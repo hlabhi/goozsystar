@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            background-color: #10131b;
+            color: #e0e2ed;
+            font-family: 'Inter', sans-serif;
+        }
+        .glass-panel {
+            background: rgba(28, 32, 40, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(65, 71, 85, 0.3);
+        }
+        .glow-border {
+            position: relative;
+        }
+        .glow-border::after {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            background: linear-gradient(45deg, #adc6ff, transparent, #adc6ff);
+            z-index: -1;
+            opacity: 0.1;
+            border-radius: inherit;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#633700",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "primary-fixed": "#d8e2ff",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffb595",
+                    "secondary-fixed-dim": "#ffb874",
+                    "tertiary-container": "#ef6719",
+                    "on-tertiary-fixed": "#351000",
+                    "background": "#10131b",
+                    "on-tertiary-container": "#4c1a00",
+                    "surface-container-high": "#272a32",
+                    "surface-container-lowest": "#0b0e16",
+                    "outline-variant": "#414755",
+                    "surface-container-highest": "#31353d",
+                    "surface": "#10131b",
+                    "surface-variant": "#31353d",
+                    "primary": "#adc6ff",
+                    "on-surface": "#e0e2ed",
+                    "primary-container": "#4b8eff",
+                    "inverse-on-surface": "#2d3039",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#10131b",
+                    "surface-container": "#1c2028",
+                    "on-primary-fixed": "#001a41",
+                    "secondary-fixed": "#ffdcbf",
+                    "on-tertiary": "#571e00",
+                    "on-surface-variant": "#c1c6d7",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "inverse-primary": "#005bc1",
+                    "on-primary-container": "#00285c",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e0e2ed",
+                    "surface-tint": "#adc6ff",
+                    "surface-bright": "#363942",
+                    "on-secondary-fixed": "#2d1600",
+                    "on-background": "#e0e2ed",
+                    "on-primary": "#002e69",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbcc",
+                    "surface-container-low": "#181c23",
+                    "secondary-container": "#fe9400",
+                    "secondary": "#ffbc7c",
+                    "on-secondary": "#4b2800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-display": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "technical-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<div class="flex justify-between items-center w-full px-5 py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">RTV_REPAIR</div>
+<button class="material-symbols-outlined text-on-surface-variant">menu</button>
+</div>
+</header>
+<main class="pt-24 pb-12 px-5 space-y-12">
+<!-- Hero & Mission Section -->
+<section class="space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 glass-panel rounded-full border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-technical-code text-label-caps text-primary uppercase">STATUS_SYSTEMU: OPERACYJNY</span>
+</div>
+<h1 class="font-headline-display text-headline-display text-on-surface leading-tight">Przywracamy sprzęt do życia.</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Naszą misją jest zapewnienie nieskazitelnej jakości napraw elektroniki poprzez inżynieryjną precyzję i przejrzystość procesów. Nie tylko naprawiamy urządzenia, przywracamy Twoją łączność ze światem.
+        </p>
+</section>
+<!-- Stats Grid (Bento Style) -->
+<section class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-6 flex flex-col justify-between aspect-square">
+<span class="font-technical-code text-label-caps text-primary">EXP_YEARS</span>
+<div>
+<div class="font-headline-display text-4xl text-on-surface">25+</div>
+<div class="font-body-md text-on-surface-variant text-sm">Lat doświadczenia</div>
+</div>
+</div>
+<div class="glass-panel p-6 flex flex-col justify-between aspect-square">
+<span class="font-technical-code text-label-caps text-secondary">DEVICES_FIXED</span>
+<div>
+<div class="font-headline-display text-4xl text-on-surface">15k+</div>
+<div class="font-body-md text-on-surface-variant text-sm">Naprawionych urządzeń</div>
+</div>
+</div>
+<div class="glass-panel p-6 flex flex-col justify-between col-span-2 min-h-[120px]">
+<div class="flex justify-between items-start">
+<span class="font-technical-code text-label-caps text-on-surface-variant">SUCCESS_RATE</span>
+<span class="material-symbols-outlined text-primary" data-weight="fill">verified</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-1 mt-4">
+<div class="bg-primary h-1 rounded-full w-[98.4%] shadow-[0_0_8px_rgba(173,198,255,0.6)]"></div>
+</div>
+<div class="font-technical-code text-xs mt-2 text-right">98.4% WSZYSTKIE_SYSTEMY_OPERACYJNE</div>
+</div>
+</section>
+<!-- Visual Context Section (From SCREEN_8 influence) -->
+<section class="space-y-4">
+<div class="relative h-64 overflow-hidden rounded-xl glass-panel">
+<img alt="Precyzyjna naprawa" class="w-full h-full object-cover opacity-70" data-alt="A macro shot of a motherboard being repaired under a microscope, muted tones, professional technical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu6isGeBU602CQqyeGJPjHPqzae-VW9m4eYJaUHzka0bMUjLjbr8wr0UrS80YUiX0zOsjI9Wze-8NiNOUmlcdDjGJ9KnxJG7yy7w9HC-79_v736vnmnE8SK09w6-BNvONcg2T0YWa1HRAHV9uuVFx_VLyAIOxSCV21wdxCdNWnVk2PLio5AN82P3KrFXBTHsfjRqc762tE7REErr7qk5ohZOkd5iM9WAY3zuSssx_dZV45UXUkiwcARGTsEJGvUFFWpdrZzwJg49Uz"/>
+<div class="absolute top-4 right-4 font-technical-code text-xs bg-background/80 px-2 py-1 border border-outline-variant/30">KALIBRACJA_MODUŁU_01</div>
+</div>
+</section>
+<!-- Warranty Section -->
+<section class="glass-panel p-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-primary/20 text-6xl" style="font-variation-settings: 'FILL' 1;">shield_with_heart</span>
+</div>
+<div class="relative z-10 space-y-4">
+<div class="font-technical-code text-label-caps text-primary">PROTOKÓŁ_GWARANCYJNY</div>
+<h2 class="font-headline-lg text-headline-lg">Gwarancja jakości</h2>
+<p class="font-body-md text-on-surface-variant">
+                Zapewniamy oficjalną gwarancję do <span class="text-primary font-bold">12 miesięcy</span> na wszystkie rodzaje prac i wymienione komponenty. Każdy etap jest rejestrowany w systemie cyfrowym.
+            </p>
+<div class="grid grid-cols-1 gap-3 pt-4">
+<div class="flex items-center gap-3 font-technical-code text-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">done_all</span>
+                    Oryginalne części zamienne
+                </div>
+<div class="flex items-center gap-3 font-technical-code text-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">done_all</span>
+                    Testowanie zgodne z normami
+                </div>
+<div class="flex items-center gap-3 font-technical-code text-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-sm">done_all</span>
+                    Potwierdzenie dokumentacją
+                </div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-6">
+<button class="w-full bg-primary text-on-primary py-5 rounded-lg font-headline-lg text-lg shadow-[0_8px_24px_rgba(173,198,255,0.2)] active:scale-95 transition-all">
+            ZLEĆ NAPRAWĘ
+        </button>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="w-full px-5 py-16 bg-surface-container-lowest border-t border-outline-variant/20 space-y-12">
+<div class="space-y-6">
+<div class="font-label-caps text-primary text-lg">RTV_REPAIR</div>
+<ul class="space-y-4 font-body-md text-on-surface-variant">
+<li>Osiedle Oświecenia 44, 31-636 Kraków</li>
+<li>Tel: 126470930</li>
+<li>Godziny: Pon-Pt 09:00-18:00</li>
+</ul>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<a class="font-technical-code text-xs text-on-surface-variant hover:text-primary underline" href="#">Warunki świadczenia usług</a>
+<a class="font-technical-code text-xs text-on-surface-variant hover:text-primary underline" href="#">Polityka prywatności</a>
+</div>
+<div class="pt-8 border-t border-outline-variant/10 text-center">
+<div class="font-technical-code text-[10px] text-on-surface-variant/50">
+            © 2024 RTV SYSTEMS. WSZYSTKIE_SYSTEMY_OPERACYJNE
+        </div>
+</div>
+</footer>
+</body></html>

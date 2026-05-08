@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-container": "#633700",
+                "outline": "#8b90a0",
+                "on-tertiary-fixed-variant": "#7c2e00",
+                "primary-fixed": "#d8e2ff",
+                "on-primary-fixed-variant": "#004493",
+                "on-secondary-fixed-variant": "#6a3b00",
+                "error": "#ffb4ab",
+                "tertiary": "#ffb595",
+                "secondary-fixed-dim": "#ffb874",
+                "tertiary-container": "#ef6719",
+                "on-tertiary-fixed": "#351000",
+                "background": "#10131b",
+                "on-tertiary-container": "#4c1a00",
+                "surface-container-high": "#272a32",
+                "surface-container-lowest": "#0b0e16",
+                "outline-variant": "#414755",
+                "surface-container-highest": "#31353d",
+                "surface": "#10131b",
+                "surface-variant": "#31353d",
+                "primary": "#adc6ff",
+                "on-surface": "#e0e2ed",
+                "primary-container": "#4b8eff",
+                "inverse-on-surface": "#2d3039",
+                "on-error-container": "#ffdad6",
+                "surface-dim": "#10131b",
+                "surface-container": "#1c2028",
+                "on-primary-fixed": "#001a41",
+                "secondary-fixed": "#ffdcbf",
+                "on-tertiary": "#571e00",
+                "on-surface-variant": "#c1c6d7",
+                "tertiary-fixed-dim": "#ffb595",
+                "inverse-primary": "#005bc1",
+                "on-primary-container": "#00285c",
+                "primary-fixed-dim": "#adc6ff",
+                "on-error": "#690005",
+                "inverse-surface": "#e0e2ed",
+                "surface-tint": "#adc6ff",
+                "surface-bright": "#363942",
+                "on-secondary-fixed": "#2d1600",
+                "on-background": "#e0e2ed",
+                "on-primary": "#002e69",
+                "error-container": "#93000a",
+                "tertiary-fixed": "#ffdbcc",
+                "surface-container-low": "#181c23",
+                "secondary-container": "#fe9400",
+                "secondary": "#ffbc7c",
+                "on-secondary": "#4b2800"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+            },
+            "spacing": {
+                "margin-desktop": "80px",
+                "gutter": "24px",
+                "unit": "4px",
+                "margin-mobile": "20px",
+                "container-max": "1440px"
+            },
+            "fontFamily": {
+                "label-caps": ["JetBrains Mono"],
+                "headline-lg": ["Hanken Grotesk"],
+                "body-md": ["Inter"],
+                "headline-display": ["Hanken Grotesk"],
+                "headline-lg-mobile": ["Hanken Grotesk"],
+                "technical-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(28, 32, 40, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(65, 71, 85, 0.4);
+        }
+        .glow-blue {
+            box-shadow: 0 0 20px rgba(75, 142, 255, 0.15);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-bottom-color: #adc6ff !important;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<div class="flex justify-between items-center w-full px-margin-mobile py-4 max-w-container-max mx-auto md:px-margin-desktop">
+<span class="font-headline-lg font-extrabold tracking-tighter text-primary">RTV_REPAIR</span>
+<nav class="hidden md:flex gap-8">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Start</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Usługi</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">Śledzenie</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-200" href="#">O nas</a>
+<a class="font-label-caps text-label-caps text-primary border-b-2 border-primary pb-1 font-bold" href="#">Kontakt</a>
+</nav>
+<button class="bg-primary text-on-primary px-4 py-2 rounded-lg font-label-caps text-label-caps active:scale-95 duration-100 transition-all hover:bg-primary/90">
+                ROZPOCZNIJ_NAPRAWĘ
+            </button>
+</div>
+</header>
+<main class="pt-24 pb-12 px-margin-mobile max-w-container-max mx-auto">
+<!-- Header Section -->
+<section class="mb-10">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-technical-code text-technical-code text-primary uppercase tracking-widest">System_Aktywny</span>
+</div>
+<h1 class="font-headline-display text-headline-display mb-4">Skontaktuj się z nami</h1>
+<p class="text-on-surface-variant font-body-md">Profesjonalny serwis elektroniki w Krakowie. Zapewniamy przejrzystość procesu i najwyższą precyzję diagnostyczną.</p>
+</section>
+<!-- Quick Actions Bento -->
+<section class="grid grid-cols-2 gap-4 mb-8">
+<a class="glass-panel p-6 flex flex-col items-center justify-center text-center rounded-xl active:scale-95 transition-transform" href="tel:126470930">
+<span class="material-symbols-outlined text-primary mb-3" style="font-size: 32px;">call</span>
+<span class="font-label-caps text-label-caps block mb-1">Zadzwoń</span>
+<span class="font-technical-code text-xs text-on-surface-variant">12 647 09 30</span>
+</a>
+<a class="glass-panel p-6 flex flex-col items-center justify-center text-center rounded-xl active:scale-95 transition-transform" href="https://www.google.com/maps/search/?api=1&amp;query=Osiedle+Oświecenia+44,+31-636+Kraków" target="_blank">
+<span class="material-symbols-outlined text-primary mb-3" style="font-size: 32px;">map</span>
+<span class="font-label-caps text-label-caps block mb-1">Mapa</span>
+<span class="font-technical-code text-xs text-on-surface-variant">Kraków</span>
+</a>
+</section>
+<!-- Map Section -->
+<section class="mb-8 overflow-hidden rounded-xl border border-outline-variant/30 glow-blue relative h-64 w-full">
+<div class="absolute top-4 right-4 z-10">
+<div class="bg-surface-container-highest px-3 py-1 rounded-full border border-primary/30">
+<span class="font-technical-code text-[10px] text-primary">GEOLOKALIZACJA_CENTRUM</span>
+</div>
+</div>
+<img alt="Mapa lokalizacji serwisu w Krakowie" class="w-full h-full object-cover grayscale opacity-80 brightness-75" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZPP5QHBsXZlh87jIYJo0aZxmOWVnRMGBiO8QuUKG_x2tCE9O_xigmt4cpcxw-ICEqkV_oZuCievOqAkae7zPhLIrf-9oLt0sKtfuCrjShvgkFgG_0ed2xupOBFAyWicqb_92bwB2IUDNPNC-EJcJcOf_9AmGhdT3IkeMZVtfvYABrCXgWAQhjJ8uj9IKGerO_HArItt9zx3jyC-nvj5T_ecLvvIbjo1w0eYARBZWc0v0SkrueDX2Uv0_GGj7krPg3mFxj5ePFUQHA"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-background to-transparent">
+<p class="font-technical-code text-xs text-on-surface">Osiedle Oświecenia 44, 31-636 Kraków, Polska</p>
+</div>
+</section>
+<!-- Form Section -->
+<section class="glass-panel p-6 rounded-xl mb-12">
+<div class="flex justify-between items-start mb-6">
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile">Wyślij zapytanie</h2>
+<span class="font-technical-code text-label-caps text-outline">FORM_REQUEST</span>
+</div>
+<form class="space-y-6">
+<div>
+<label class="font-label-caps text-[10px] text-outline uppercase block mb-1">Twoje Imię</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-1 font-body-md text-on-surface placeholder:text-outline/50 transition-all" placeholder="Wpisz imię..." type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-outline uppercase block mb-1">Email / Telefon</label>
+<input class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-1 font-body-md text-on-surface placeholder:text-outline/50 transition-all" placeholder="Dane kontaktowe..." type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-[10px] text-outline uppercase block mb-1">Typ urządzenia / Opis usterki</label>
+<textarea class="w-full bg-surface-container-low border-b border-outline-variant py-3 px-1 font-body-md text-on-surface placeholder:text-outline/50 transition-all resize-none" placeholder="Opisz problem lub podaj model urządzenia..." rows="3"></textarea>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded-lg font-label-caps text-label-caps shadow-lg shadow-primary/20 active:scale-[0.98] transition-all" type="submit">
+                    WYŚLIJ DANE
+                </button>
+</form>
+</section>
+<!-- Information Info -->
+<div class="space-y-4 mb-16">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" style="font-size: 20px;">schedule</span>
+<span class="font-body-md text-on-surface-variant">Pn-Pt: 09:00 - 18:00</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-outline" style="font-size: 20px;">support_agent</span>
+<span class="font-body-md text-on-surface-variant">Pomoc techniczna dostępna w godzinach pracy</span>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="w-full px-margin-mobile py-16 grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto md:px-margin-desktop">
+<div class="space-y-4">
+<span class="font-label-caps text-primary text-lg font-bold">RTV SYSTEMS</span>
+<p class="font-technical-code text-technical-code text-on-surface-variant">WSZYSTKIE_SYSTEMY_SPRAWNE</p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-outline text-[10px]">KONTAKT</span>
+<address class="not-italic font-body-md text-on-surface-variant hover:text-secondary transition-colors">Osiedle Oświecenia 44, 31-636 Kraków</address>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="tel:126470930">Telefon: 12 647 09 30</a>
+<span class="font-body-md text-on-surface-variant">Godziny: Pn-Pt 09:00-18:00</span>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-label-caps text-outline text-[10px]">PRAWNE</span>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Regulamin</a>
+<a class="font-body-md text-on-surface-variant hover:text-secondary transition-colors" href="#">Polityka prywatności</a>
+<p class="font-technical-code text-[10px] text-outline mt-4 opacity-50">© 2024 RTV SYSTEMS</p>
+</div>
+</div>
+</footer>
+</body></html>

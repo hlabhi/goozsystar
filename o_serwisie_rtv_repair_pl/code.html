@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-container": "#4c1a00",
+                    "tertiary-container": "#ef6719",
+                    "on-tertiary-fixed": "#351000",
+                    "background": "#10131b",
+                    "secondary-fixed-dim": "#ffb874",
+                    "tertiary": "#ffb595",
+                    "error": "#ffb4ab",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "on-primary-fixed-variant": "#004493",
+                    "primary-fixed": "#d8e2ff",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "on-secondary-container": "#633700",
+                    "surface-variant": "#31353d",
+                    "surface": "#10131b",
+                    "surface-container-highest": "#31353d",
+                    "outline-variant": "#414755",
+                    "surface-container-lowest": "#0b0e16",
+                    "surface-container-high": "#272a32",
+                    "on-secondary-fixed": "#2d1600",
+                    "surface-bright": "#363942",
+                    "surface-tint": "#adc6ff",
+                    "inverse-surface": "#e0e2ed",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-error": "#690005",
+                    "on-primary-container": "#00285c",
+                    "inverse-primary": "#005bc1",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "on-surface-variant": "#c1c6d7",
+                    "on-tertiary": "#571e00",
+                    "secondary-fixed": "#ffdcbf",
+                    "surface-container": "#1c2028",
+                    "on-primary-fixed": "#001a41",
+                    "surface-dim": "#10131b",
+                    "on-error-container": "#ffdad6",
+                    "inverse-on-surface": "#2d3039",
+                    "primary-container": "#4b8eff",
+                    "on-surface": "#e0e2ed",
+                    "primary": "#adc6ff",
+                    "on-secondary": "#4b2800",
+                    "secondary": "#ffbc7c",
+                    "secondary-container": "#fe9400",
+                    "surface-container-low": "#181c23",
+                    "tertiary-fixed": "#ffdbcc",
+                    "on-primary": "#002e69",
+                    "error-container": "#93000a",
+                    "on-background": "#e0e2ed"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "technical-code": ["JetBrains Mono"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "headline-display": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(28, 32, 40, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 144, 160, 0.2);
+        }
+        .glow-border:hover {
+            box-shadow: 0 0 20px rgba(75, 142, 255, 0.15);
+            border-color: rgba(173, 198, 255, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">RTV_REPAIR</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Start</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Usługi</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Śledzenie</a>
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-caps text-label-caps" href="#">O nas</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">Kontakt</a>
+</div>
+<button class="bg-primary-container text-on-primary-container px-6 py-2 font-label-caps text-label-caps hover:bg-primary/90 transition-all active:scale-95 duration-100">
+            ZLEĆ_NAPRAWĘ
+        </button>
+</nav>
+</header>
+<main class="pt-32 pb-16">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-24">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-technical-code text-technical-code text-primary">STATUS_SYSTEMU: OPERACYJNY</span>
+</div>
+<h1 class="font-headline-display text-headline-display text-on-surface">Sztuka przywracania zaawansowanej elektroniki</h1>
+<p class="text-on-surface-variant text-body-md max-w-xl">
+                    Jesteśmy RTV SYSTEMS – zespołem inżynierów-perfekcjonistów. Naszą misją jest przywracanie do życia urządzeń, które inni uznali za nienaprawialne, przy użyciu precyzyjnego sprzętu i dekad doświadczenia.
+                </p>
+<div class="flex gap-4">
+<div class="glass-panel p-4 flex-1">
+<span class="font-headline-lg text-headline-lg text-primary block">25+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">LAT DOŚWIADCZENIA</span>
+</div>
+<div class="glass-panel p-4 flex-1">
+<span class="font-headline-lg text-headline-lg text-primary block">15k+</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">URZĄDZEŃ</span>
+</div>
+</div>
+</div>
+<div class="relative h-[500px] overflow-hidden rounded-xl glass-panel">
+<img alt="Precyzyjna naprawa" class="w-full h-full object-cover opacity-70" data-alt="A macro shot of a motherboard being repaired under a microscope, muted tones, professional technical setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCu6isGeBU602CQqyeGJPjHPqzae-VW9m4eYJaUHzka0bMUjLjbr8wr0UrS80YUiX0zOsjI9Wze-8NiNOUmlcdDjGJ9KnxJG7yy7w9HC-79_v736vnmnE8SK09w6-BNvONcg2T0YWa1HRAHV9uuVFx_VLyAIOxSCV21wdxCdNWnVk2PLio5AN82P3KrFXBTHsfjRqc762tE7REErr7qk5ohZOkd5iM9WAY3zuSssx_dZV45UXUkiwcARGTsEJGvUFFWpdrZzwJg49Uz"/>
+<div class="absolute top-4 right-4 font-technical-code text-technical-code bg-background/80 px-3 py-1 border border-outline-variant/30">KALIBRACJA_MODUŁU_01</div>
+</div>
+</div>
+</section>
+<!-- Our Experience: Bento Grid -->
+<section class="max-w-container-max mx-auto px-margin-desktop mb-32">
+<h2 class="font-headline-lg text-headline-lg mb-12 flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="terminal">terminal</span>
+            Nasze doświadczenie i wiedza
+        </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 glass-panel p-8 glow-border transition-all">
+<div class="flex justify-between items-start mb-12">
+<span class="font-technical-code text-technical-code text-primary">TECH_STACK_01</span>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="memory">memory</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Naprawa komponentowa</h3>
+<p class="text-on-surface-variant mb-6">Nie ograniczamy się do wymiany modułów. Naprawiamy płyty główne na poziomie komponentów: lutowanie BGA, wymiana kontrolerów zasilania, odbudowa ścieżek po korozji.</p>
+<div class="h-48 w-full bg-surface-container rounded-lg overflow-hidden">
+<img alt="Stacja BGA" class="w-full h-full object-cover opacity-40 grayscale hover:grayscale-0 transition-all duration-500" data-alt="Technical workbench with soldering equipment in a clean, professional lab." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArOkzRLMko_vjaY8JNlEYG0c1xY-EllsrZS58btq4ogUqKzUMG3eGCSo1Eaz3Z-FzbPku3R969VSbdc61_XYRzP2bon6_2To9tAjYaAkwwQ_VaB-ayCOKmrobOCCEegZhdYsvmmRRfP8o3I82pkdUUtLFfmZULRp6zzuuH3kMVbqE4wuyjj5kc7aqfzeeq1itwkh8oP7ZEqDc4bbYpfth95SrRCQDwRISQLoJYKpdW-m-fM919IHrYfbIYUe1ZZNwkhaSMXDsJxXN8"/>
+</div>
+</div>
+<div class="glass-panel p-8 flex flex-col justify-between glow-border transition-all">
+<span class="font-technical-code text-technical-code text-secondary mb-4">PROCEDURA_DIAGNOSTYCZNA</span>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Precyzyjna diagnostyka</h3>
+<p class="text-on-surface-variant">Wykorzystanie oscyloskopów i kamer termowizyjnych pozwala nam zlokalizować usterkę z dokładnością do 0.1 mm.</p>
+<div class="mt-8 flex justify-end">
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="biotech">biotech</span>
+</div>
+</div>
+<div class="glass-panel p-8 glow-border transition-all">
+<div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-on-tertiary-container" data-icon="shield">shield</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Gwarancja jakości</h3>
+<p class="text-on-surface-variant">Każde urządzenie przechodzi 12-godzinny test obciążeniowy przed wydaniem. Jesteśmy pewni naszej pracy.</p>
+</div>
+<div class="md:col-span-2 glass-panel p-8 flex items-center gap-8 glow-border transition-all">
+<div class="flex-1">
+<h3 class="font-headline-lg text-headline-lg-mobile mb-4">Zaplecze narzędziowe</h3>
+<p class="text-on-surface-variant">Inwestujemy w najlepszy sprzęt marek JBC, Fluke i Rigol, aby zagwarantować fabryczną jakość połączeń lutowanych.</p>
+</div>
+<div class="w-1/3 hidden md:block">
+<img alt="Narzędzia" class="rounded-lg shadow-xl opacity-60" data-alt="High precision measuring tools and multimeters on a dark technician workbench." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCV1CVc6y7eV84XLgwMrkpS9-O3_ZLrO_DmxpdRD8Cv6h_CLUp25rGFgAtTRF9PtzEFt2WE6CzqhcHoLD1uanHk5JVcq2NpuywCbBQmW3SjLTIOdLOyewnJtXrueo7niCbFbWTCHzFRJBtYb_DF6j2HhU07b1-5rrXy0vsjH1aUPP96YOdKOns6fj73qx2pT0HF5lgAEbliesMPJSu0oAMDolPmqnDZEmULzwe0HKUJ3BpCZVj0Akh-qBv77ogXjPXQCsLAD3SG5ZXH"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Quality Guarantee -->
+<section class="max-w-container-max mx-auto px-margin-desktop py-24">
+<div class="glass-panel p-12 relative overflow-hidden">
+<div class="relative z-10 max-w-2xl">
+<h2 class="font-headline-display text-headline-display mb-6">Gwarancja doskonałości</h2>
+<p class="text-on-surface-variant text-body-md mb-8">
+                    Nie szukamy rozwiązań tymczasowych. Każda naprawa to przywrócenie urządzenia do specyfikacji fabrycznej. Używamy wyłącznie oryginalnych części lub certyfikowanych zamienników najwyższej klasy.
+                </p>
+<ul class="space-y-4">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+<span class="font-label-caps text-label-caps">12 MIESIĘCY GWARANCJI NA WSZYSTKIE PRACE</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="task_alt">task_alt</span>
+<span class="font-label-caps text-label-caps">BEZPŁATNA DIAGNOSTYKA PRZY NAPRAWIE</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="biotech">biotech</span>
+<span class="font-label-caps text-label-caps">KONTROLA JAKOŚCI ZGODNA ZE STANDARDEM ISO</span>
+</li>
+</ul>
+</div>
+<!-- Background decoration -->
+<div class="absolute -right-20 -bottom-20 opacity-10">
+<span class="material-symbols-outlined text-[300px]" data-icon="security" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant/20 bg-surface-container-lowest">
+<div class="w-full px-margin-desktop py-16 grid grid-cols-1 md:grid-cols-3 gap-gutter max-w-container-max mx-auto">
+<div>
+<div class="font-label-caps text-primary text-lg mb-6">RTV_REPAIR</div>
+<p class="text-on-surface-variant font-body-md max-w-xs">
+                Profesjonalny serwis elektroniki. Robimy to, co inni uważają za niemożliwe.
+            </p>
+</div>
+<div class="space-y-2">
+<p class="text-on-surface-variant font-body-md">Osiedle Oświecenia 44, 31-636 Kraków</p>
+<p class="text-on-surface-variant font-body-md">Tel: 126470930</p>
+<p class="text-on-surface-variant font-body-md">Godziny: Pon-Pt 09:00-18:00</p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Warunki świadczenia usług</a>
+<a class="text-on-surface-variant hover:text-secondary transition-colors font-body-md" href="#">Polityka prywatności</a>
+<div class="pt-8">
+<p class="font-technical-code text-technical-code text-on-surface-variant opacity-50">© 2024 RTV SYSTEMS. WSZYSTKIE_SYSTEMY_OPERACYJNE</p>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

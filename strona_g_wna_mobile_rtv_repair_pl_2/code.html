@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pl"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-container": "#633700",
+                    "outline": "#8b90a0",
+                    "on-tertiary-fixed-variant": "#7c2e00",
+                    "primary-fixed": "#d8e2ff",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary-fixed-variant": "#6a3b00",
+                    "error": "#ffb4ab",
+                    "tertiary": "#ffb595",
+                    "secondary-fixed-dim": "#ffb874",
+                    "tertiary-container": "#ef6719",
+                    "on-tertiary-fixed": "#351000",
+                    "background": "#10131b",
+                    "on-tertiary-container": "#4c1a00",
+                    "surface-container-high": "#272a32",
+                    "surface-container-lowest": "#0b0e16",
+                    "outline-variant": "#414755",
+                    "surface-container-highest": "#31353d",
+                    "surface": "#10131b",
+                    "surface-variant": "#31353d",
+                    "primary": "#adc6ff",
+                    "on-surface": "#e0e2ed",
+                    "primary-container": "#4b8eff",
+                    "inverse-on-surface": "#2d3039",
+                    "on-error-container": "#ffdad6",
+                    "surface-dim": "#10131b",
+                    "surface-container": "#1c2028",
+                    "on-primary-fixed": "#001a41",
+                    "secondary-fixed": "#ffdcbf",
+                    "on-tertiary": "#571e00",
+                    "on-surface-variant": "#c1c6d7",
+                    "tertiary-fixed-dim": "#ffb595",
+                    "inverse-primary": "#005bc1",
+                    "on-primary-container": "#00285c",
+                    "primary-fixed-dim": "#adc6ff",
+                    "on-error": "#690005",
+                    "inverse-surface": "#e0e2ed",
+                    "surface-tint": "#adc6ff",
+                    "surface-bright": "#363942",
+                    "on-secondary-fixed": "#2d1600",
+                    "on-background": "#e0e2ed",
+                    "on-primary": "#002e69",
+                    "error-container": "#93000a",
+                    "tertiary-fixed": "#ffdbcc",
+                    "surface-container-low": "#181c23",
+                    "secondary-container": "#fe9400",
+                    "secondary": "#ffbc7c",
+                    "on-secondary": "#4b2800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "margin-mobile": "20px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Hanken Grotesk"],
+                    "body-md": ["Inter"],
+                    "headline-display": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Hanken Grotesk"],
+                    "technical-code": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "label-caps": ["12px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-display": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "technical-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(28, 32, 40, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(65, 71, 85, 0.4);
+        }
+        .glow-primary {
+            box-shadow: 0 0 20px rgba(75, 142, 255, 0.15);
+        }
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #adc6ff;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 8px #4b8eff;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary/30">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-[0_0_20px_rgba(75,142,255,0.1)]">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-container-max mx-auto">
+<span class="font-headline-lg font-extrabold tracking-tighter text-primary dark:text-primary">RTV_REPAIR</span>
+<div class="md:flex hidden gap-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-bold font-label-caps text-label-caps" href="#">START</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">USŁUGI</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-caps text-label-caps" href="#">STATUS</a>
+</div>
+<button class="bg-primary text-on-primary px-4 py-2 font-label-caps text-label-caps rounded-lg active:scale-95 duration-100">ZLEĆ_NAPRAWĘ</button>
+</div>
+</header>
+<main class="pt-20 pb-24">
+<!-- Hero Section -->
+<section class="px-6 py-12 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10">
+<div class="inline-flex items-center glass-panel px-3 py-1 rounded-full mb-6">
+<span class="pulse-dot"></span>
+<span class="font-technical-code text-technical-code text-primary uppercase">STATUS_SYSTEMU: TRYB_WYSOKIEJ_PRECYZJI</span>
+</div>
+<h1 class="font-headline-display text-headline-display mb-6">
+                    PROFESJONALNY SERWIS <span class="text-primary">LAPTOPÓW I PC</span>
+</h1>
+<p class="text-on-surface-variant mb-10 max-w-md">
+                    Przywracamy sprawność urządzeniom każdej marki. Stosujemy wysokiej jakości części zamienne i profesjonalne narzędzia diagnostyczne w samym sercu Krakowa.
+                </p>
+<div class="flex flex-col gap-4">
+<button class="w-full bg-primary text-on-primary py-4 rounded-xl font-label-caps text-label-caps flex items-center justify-center gap-2 glow-primary">
+                        ZLEĆ_NAPRAWĘ
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_forward</span>
+</button>
+<button class="w-full glass-panel text-on-surface py-4 rounded-xl font-label-caps text-label-caps border border-outline-variant/50">
+                        SPRAWDŹ_STATUS
+                    </button>
+</div>
+</div>
+</section>
+<!-- Services Bento Grid -->
+<section class="px-6 py-12">
+<h2 class="font-headline-lg text-headline-lg mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">build</span>
+                USŁUGI
+            </h2>
+<div class="grid grid-cols-1 gap-4">
+<!-- PC Card -->
+<div class="glass-panel p-6 rounded-2xl relative overflow-hidden group">
+<div class="absolute top-4 right-4 font-technical-code text-[10px] text-outline">KOD: 001_PC</div>
+<span class="material-symbols-outlined text-4xl text-primary mb-4">desktop_windows</span>
+<h3 class="font-headline-lg text-headline-lg-mobile mb-2">Serwis PC</h3>
+<p class="text-on-surface-variant text-sm mb-4">Konfiguracja, czyszczenie, wymiana komponentów oraz zaawansowana naprawa płyt głównych.</p>
+<div class="h-1 w-0 bg-primary group-hover:w-full transition-all duration-500"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Mobile Card -->
+<div class="glass-panel p-6 rounded-2xl flex flex-col justify-between aspect-square">
+<span class="material-symbols-outlined text-primary text-3xl">smartphone</span>
+<div>
+<h3 class="font-label-caps text-label-caps mb-1">Smartfony</h3>
+<div class="text-[10px] text-primary/60 font-technical-code">WYMIANA_EKRANU</div>
+</div>
+</div>
+<!-- Laptop Card -->
+<div class="glass-panel p-6 rounded-2xl flex flex-col justify-between aspect-square bg-primary-container/10 border-primary/30">
+<span class="material-symbols-outlined text-primary text-3xl">laptop_mac</span>
+<div>
+<h3 class="font-label-caps text-label-caps mb-1">Laptopy</h3>
+<div class="text-[10px] text-primary/60 font-technical-code">NAPRAWA_PŁYT</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features -->
+<section class="px-6 py-12 bg-surface-container-low">
+<h2 class="font-headline-lg text-headline-lg mb-8 uppercase">NASZE ATUTY</h2>
+<div class="space-y-8">
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-primary/10 rounded-lg flex items-center justify-center border border-primary/20">
+<span class="material-symbols-outlined text-primary">verified</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-primary mb-2">EKSPERCKA_WIEDZA</h4>
+<p class="text-sm text-on-surface-variant">Certyfikowani technicy z wieloletnim stażem w naprawach zaawansowanej mikrolektroniki.</p>
+</div>
+</div>
+<div class="flex gap-6 items-start">
+<div class="w-12 h-12 flex-shrink-0 bg-secondary/10 rounded-lg flex items-center justify-center border border-secondary/20">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+</div>
+<div>
+<h4 class="font-label-caps text-label-caps text-secondary mb-2">SZYBKOŚĆ_DZIAŁANIA</h4>
+<p class="text-sm text-on-surface-variant">Własny magazyn części pozwala na realizację większości napraw jeszcze tego samego dnia.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Latest Works -->
+<section class="px-6 py-12">
+<div class="flex justify-between items-end mb-8">
+<h2 class="font-headline-lg text-headline-lg uppercase">OSTATNIE_ZLECENIA</h2>
+<a class="font-label-caps text-[10px] text-primary underline" href="#">ZOBACZ_WSZYSTKO</a>
+</div>
+<div class="flex overflow-x-auto gap-4 pb-4 snap-x no-scrollbar">
+<!-- Project 1 -->
+<div class="snap-center min-w-[280px] glass-panel rounded-xl overflow-hidden">
+<div class="h-40 w-full relative">
+<img alt="Naprawa laptopa" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX9FVF-bZZzcevS8UU5QzgIot90HOGWePbKweat9fAoGC-gZ-uK3U19L_0iAFVls9ZT01MKWmbW2Vp91Wg8A1t46UMhxhCSgQZN-RwuineKMtfp_NmLxxtoy9q2ULmOH8YCbZMXd2ehNPiWM3CafURUNfPLJ-QcL-n7YWxfZ9eOpTdwgeB94d2nFTMhIe-FwxlOHBuU9YbOeYflSQurT6uA_lhi9gzKAL13U0L8m-i7CoeUgZTrvhK1xSxEhtYBy7Ili7LZMSPzvEb"/>
+<div class="absolute top-2 right-2 bg-primary/20 backdrop-blur px-2 py-1 rounded">
+<span class="font-technical-code text-[10px] text-primary">GOTOWE</span>
+</div>
+</div>
+<div class="p-4">
+<div class="font-technical-code text-[10px] text-outline-variant mb-1">04.11.2024</div>
+<div class="font-label-caps text-sm">MacBook Pro M2 - Naprawa zasilania</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="snap-center min-w-[280px] glass-panel rounded-xl overflow-hidden">
+<div class="h-40 w-full relative">
+<img alt="Naprawa smartfona" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1ornE2FyrwxN2M1K9nhAzKjyiRhCNF93AWU_PyDvz3VkOYy4YNQ5BBmNb6Gk5lt62H5cL6BIV_CBSrvs58FPIy6LtXhT9kaJ37eE6sR1SBtPgE1gF_5w71pz-bhK1jvadhSLbLgiEKJci5YkI-up5mNXBKiCIdYQguNwPlPvh17wsNxD5B21Tuki3rtLJWMQVlgkJLKWIRpPPCv6avG6xvVj2oAfnk7TrSqLbbZDVkTe3_5uQRliQ04-K_9gZOISy_TG0unRZCNbl"/>
+<div class="absolute top-2 right-2 bg-secondary/20 backdrop-blur px-2 py-1 rounded">
+<span class="font-technical-code text-[10px] text-secondary">W_TRAKCIE</span>
+</div>
+</div>
+<div class="p-4">
+<div class="font-technical-code text-[10px] text-outline-variant mb-1">03.11.2024</div>
+<div class="font-label-caps text-sm">iPhone 15 Pro - Kalibracja OLED</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<section class="px-6 py-12">
+<h2 class="font-headline-lg text-headline-lg mb-8 uppercase flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">reviews</span>
+    OPINIE_NASZYCH_KLIENTÓW
+  </h2>
+<div class="flex flex-col gap-4">
+<!-- Review Card 1 -->
+<div class="glass-panel p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-sm text-primary">Marek J.</span>
+<span class="font-technical-code text-[10px] text-outline-variant">NAPRAWA: LAPTOP_GAMINGOWY</span>
+</div>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm italic">
+        "Błyskawiczna naprawa układu chłodzenia. Laptop chodzi ciszej niż po zakupie. Pełen profesjonalizm i świetny kontakt."
+      </p>
+</div>
+<!-- Review Card 2 -->
+<div class="glass-panel p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-sm text-primary">Anna K.</span>
+<span class="font-technical-code text-[10px] text-outline-variant">NAPRAWA: IPHONE_13</span>
+</div>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm italic">
+        "Wymiana ekranu zajęła tylko 2 godziny. Wszystko działa idealnie, a cena była bardzo uczciwa. Polecam każdemu."
+      </p>
+</div>
+<!-- Review Card 3 -->
+<div class="glass-panel p-6 rounded-2xl">
+<div class="flex justify-between items-start mb-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-sm text-primary">Piotr W.</span>
+<span class="font-technical-code text-[10px] text-outline-variant">USŁUGA: ODZYSKIWANIE_DANYCH</span>
+</div>
+<div class="flex text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">star</span>
+</div>
+</div>
+<p class="text-on-surface-variant text-sm italic">
+        "Uratowali moje zdjęcia z uszkodzonego dysku, gdy inni rozkładali ręce. Bardzo rzetelny serwis."
+      </p>
+</div>
+</div>
+</section><footer class="w-full bg-surface-container-lowest border-t border-outline-variant/20 px-6 py-12 mb-16">
+<div class="max-w-container-max mx-auto space-y-12">
+<div class="space-y-4">
+<span class="font-label-caps text-primary text-lg">RTV_SYSTEMS</span>
+<p class="font-technical-code text-technical-code text-outline-variant uppercase">
+                    © 2024 RTV SYSTEMS. WSZYSTKIE_SYSTEMY_SPRAWNE
+                </p>
+</div>
+<div class="grid grid-cols-1 gap-8 text-on-surface-variant text-sm font-technical-code">
+<div class="flex flex-col gap-2">
+<span class="text-on-surface font-bold text-xs uppercase tracking-widest mb-2">Lokalizacja</span>
+<span>Osiedle Oświecenia 44, 31-636 Kraków</span>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-on-surface font-bold text-xs uppercase tracking-widest mb-2">Kontakt</span>
+<span>Telefon: 126470930</span>
+<span>Godziny: Pon-Pt 09:00-18:00</span>
+</div>
+<div class="flex flex-wrap gap-4 border-t border-outline-variant/20 pt-8">
+<a class="hover:text-secondary transition-colors" href="#">Regulamin</a>
+<a class="hover:text-secondary transition-colors" href="#">Polityka Prywatności</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full bg-background/80 backdrop-blur-xl border-t border-outline-variant/30 flex justify-around items-center py-3 z-50 shadow-[0_-5px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="text-[10px] font-label-caps uppercase">START</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">settings_suggest</span>
+<span class="text-[10px] font-label-caps uppercase">USŁUGI</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">location_searching</span>
+<span class="text-[10px] font-label-caps uppercase">STATUS</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-label-caps uppercase">PROFIL</span>
+</a>
+</nav>
+<!-- Contextual FAB -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-lg glow-primary z-40">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>
